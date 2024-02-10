@@ -1,0 +1,12 @@
+@import "./reset.css";
+:root {
+  --border: 1px solid #cccccc;
+  --border-radius: 14px;
+  --input-width: 350px;
+  --text-small: 16px;
+  --text-large: 20px;
+  --text-big: 24px;
+  --shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
+  --color-green-1: #48a823;
+  --text-color: #dddddd;
+}

@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# 작품 소개
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+날이 갈수록 흡연 구역은 적어지고 있다.
+처음 각 지역 혹은 어디선가 흡연을 하고 싶을 때 담배를 물고 건물 벽을 보았을 때 금연구역 딱지가 붙어 있으면 주위의 CCTV를 확인하고 주변 바닥을 보며 담배꽁초가 많이 떨어져 있느가로 흡연을 하기 시작한다.
 
-## Available Scripts
+물론 이 흡연 방법은 범법행위로 간주될 수 있습니다.
+지나가는 행인에게 간접흡연으로 인해 불쾌감을 줄 수도 있구요.
+그래서 이 흡연구역을 알 수 있는 앱이 있으면 어떨까 생각을 해보았습니다.
 
-In the project directory, you can run:
+이유 1: 흡연구역이 적어져 밖에서는 흡연 부스/흡연 구역을 찾기 힘들다.
+이유 2: 정해지지 않은 곳에서 흡연을 하게 되면 행인이나 여러가지 등의 피해를 줄 수 있다.
+이유 3: 이유 2와 같은 이유로 길거리/하수구에 담배꽁초로 인해 환경오염의 주범이 될 수 있다.
 
-### `npm start`
+해결: 앱 지도를 통해 내 주변의 흡연구역을 보여줌으로써 흡연자가 비흡연자 등에게 피해를 덜 줄 수 있고 길바닥을 좀 더 깨끗하게 만들 수 있다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 앱을 통해 얻을 수 있는 사용자 정보
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+흡연구역에 대한 api를 제공해주는가 –
+사용자들이 직접 지도에 없는 흡연구역(법으로 허용된)을 추가할 수 있다.
+금연에 대한 정보 : 노담 캠페인같은 정보 제공
+흡연에 대한 정보 : 누적 흡연량과 비용, 건강을 직접적으로 확인할 수 있다.
 
-### `npm test`
+## 유사 앱
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+구름방 알리미 – 안드로이드
+5천 이상 다운
+회원가입 필요 x
+UI 개편이 필요해 보임
+위치정보 수집 – 검색을 통해 흡연 구역의 유무를 파악하고 로드뷰를 통해 검증된 데이터만 디비에 등록(위도 경도)
+앱 내부에 제보기능을 이용해 사용자에게 흡연구역 위치를 제보 받아 검증하여 디비에 등록
 
-### `npm run build`
+흡연 기록을 통해 금연 목표치를 설정하여 금연을 도와주는 기능
+흡연 기록은 사용자가 직접 터치하여 횟수 등록
+앱은 언제 담배를 피웠는지 히스토리를 제공, 금연 목표와 월 흡연 개피를 알림으로 확인
+구글API 사용
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+고찰 – 구글 API로 지도 연동할 때 플레이스토어에 맞게 SHA-1을 넣어줘야한다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 다른 앱과의 차별점
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+iOS의 앱은 노담, 금연에 대한 앱만 존재
+안드로이드는 흡연구역과 유사한 어플이 존재
 
-### `npm run eject`
+기존에 있던 유사한 앱들은 서비스 종료
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+구름방 알리미 하나 있음

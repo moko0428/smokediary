@@ -65,6 +65,9 @@
   box-shadow: var(--shadow);
   border-radius: var(--border-radius);
 }
+.Settings button:active {
+  background-color: #dddddd;
+}
 .Report {
   display: flex;
   flex-direction: column;
@@ -125,6 +128,10 @@
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   background-color: white;
+  cursor: pointer;
+}
+.Home-button button:active {
+  background-color: #dddddd;
 }
 .smokeList {
   text-align: center;

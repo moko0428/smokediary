@@ -4,7 +4,7 @@
 // 최근 흡연 기록 ✅
 // 오늘 흡연 로그 리스트 형태로 랜더링 ❌
 
-const SmokeList = ({ count, realtime }) => {
+const SmokeList = ({ count, dummyList }) => {
   return (
     <div className="smokeList">
       <div>
@@ -14,12 +14,18 @@ const SmokeList = ({ count, realtime }) => {
       <div>
         <h2>최근 흡연</h2>
         <span>
-          {realtime.length < 1
+          {count < 1
             ? "오늘은 흡연을 하지 않았습니다."
-            : new Date(realtime).toLocaleString()}
+            : new Date(dummyList[dummyList.length - 1].date).toLocaleString()}
         </span>
       </div>
-      <div>{/* 흡연 로그 */}</div>
+      <div>
+        {/* 흡연 로그 */}
+        <h2>흡연 로그</h2>
+        {dummyList.map((item) => (
+          <div>{new Date(item.date).toLocaleString()}</div>
+        ))}
+      </div>
     </div>
   );
 };

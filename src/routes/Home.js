@@ -2,6 +2,24 @@ import { useState } from "react";
 import SmokeList from "../components/SmokeList";
 import Header from "../components/Header";
 
+const dummyList = [
+  {
+    id: 0,
+    count: 0,
+    date: new Date().getTime(),
+  },
+  {
+    id: 1,
+    count: 1,
+    date: new Date().getTime(),
+  },
+  {
+    id: 2,
+    count: 2,
+    date: new Date().getTime(),
+  },
+];
+
 const Home = () => {
   const date = new Date();
 
@@ -37,7 +55,7 @@ const Home = () => {
           </svg>
         </button>
       </div>
-      <SmokeList count={count} realtime={realtime} />
+      <SmokeList count={count} realtime={realtime} dummyList={dummyList} />
     </div>
   );
 };

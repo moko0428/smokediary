@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import SmokeList from "../components/SmokeList";
 import Header from "../components/Header";
 
@@ -8,27 +8,26 @@ const dummyList = [
     count: 0,
     date: new Date().getTime(),
   },
-  {
-    id: 1,
-    count: 1,
-    date: new Date().getTime(),
-  },
-  {
-    id: 2,
-    count: 2,
-    date: new Date().getTime(),
-  },
 ];
 
 const Home = () => {
+  const [data, setData] = useState([]);
+
+  const dataId = useRef(0);
+
   const date = new Date();
 
   const [count, setCount] = useState(0);
-  const [realtime, setRealtime] = useState([]);
 
   const Counter = () => {
+    const created_date = date.getTime();
+    const newItem = {
+      created_date,
+      id: dataId.current,
+    };
+    dataId.current += 1;
+    setData([newItem, ...data]);
     setCount((prev) => prev + 1);
-    setRealtime(new Date().getTime());
   };
   return (
     <div className="Home">
@@ -55,7 +54,7 @@ const Home = () => {
           </svg>
         </button>
       </div>
-      <SmokeList count={count} realtime={realtime} dummyList={dummyList} />
+      <SmokeList count={count} smokeList={data} dummyList={dummyList} />
     </div>
   );
 };

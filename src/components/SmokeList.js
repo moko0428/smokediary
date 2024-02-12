@@ -4,30 +4,34 @@
 // 최근 흡연 기록 ✅
 // 오늘 흡연 로그 리스트 형태로 랜더링 ❌
 
-const SmokeList = ({ count, dummyList }) => {
+import SmokeLog from "./SmokeLog";
+
+const SmokeList = ({ smokeList }) => {
+  console.log(smokeList);
   return (
-    <div className="smokeList">
-      <div>
-        <h2>흡연 기록</h2>
-        <span>오늘은 {count}번 흡연하셨습니다.</span>
-      </div>
-      <div>
+    <div className="SmokeList">
+      <div className="SmokeList-last">
         <h2>최근 흡연</h2>
         <span>
-          {count < 1
+          {smokeList < 1
             ? "오늘은 흡연을 하지 않았습니다."
-            : new Date(dummyList[dummyList.length - 1].date).toLocaleString()}
+            : new Date(
+                smokeList[smokeList.length - 1].created_date
+              ).toLocaleString()}
         </span>
       </div>
-      <div>
-        {/* 흡연 로그 */}
+      <div className="SmokeList-Log">
         <h2>흡연 로그</h2>
-        {dummyList.map((item) => (
-          <div>{new Date(item.date).toLocaleString()}</div>
-        ))}
+        <div className="SmokeList-Log_list">
+          {smokeList.map((item) => (
+            <SmokeLog key={item.id} {...item} />
+          ))}
+        </div>
       </div>
     </div>
   );
 };
-
+SmokeList.defaultProps = {
+  smokeList: [],
+};
 export default SmokeList;

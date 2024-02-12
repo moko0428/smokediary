@@ -6,7 +6,136 @@
   --text-small: 16px;
   --text-large: 20px;
   --text-big: 24px;
-  --shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
+  --shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
   --color-green-1: #48a823;
   --text-color: #dddddd;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+.Header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  font-size: var(--text-big);
+  font-weight: bold;
+  margin-bottom: 35px;
+}
+.Nav {
+  display: flex;
+  justify-content: space-around;
+  border-top: var(--border);
+  font-size: var(--text-small);
+  color: var(--text-color);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+}
+.Nav div {
+  padding: 12px 14px;
+}
+
+.Settings {
+  text-align: center;
+  padding: 20px;
+}
+
+.Settings input {
+  margin-bottom: 20px;
+  width: 300px;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+.Settings input::placeholder {
+  color: var(--text-color);
+}
+.Settings button {
+  width: 340px;
+  padding: 20px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+}
+.Report {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Report-column {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  width: 400px;
+}
+
+.Report-column div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-right: var(--border);
+  padding: 20px;
+  width: 33%;
+}
+.Report-column div:last-child {
+  border-right: none;
+}
+.Report-column div span {
+  font-size: var(--text-small);
+}
+.Report-column div span:first-child {
+  margin-bottom: 10px;
+}
+
+.Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Home div {
+  margin-bottom: 40px;
+}
+
+.Home-date h2 {
+  font-size: var(--text-large);
+  color: #cccccc;
+}
+
+.Home-count span {
+  color: var(--color-green-1);
+  font-weight: bold;
+  font-size: 120px;
+}
+
+.Home-button button {
+  padding: 20px;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  background-color: white;
+}
+.smokeList {
+  text-align: center;
+  color: black;
+
+  width: 100%;
+}
+.smokeList h2 {
+  font-size: var(--text-big);
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+.smokeList span {
+  color: #cccccc;
 }

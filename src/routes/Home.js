@@ -2,14 +2,6 @@ import { useRef, useState } from "react";
 import SmokeList from "../components/SmokeList";
 import Header from "../components/Header";
 
-const dummyList = [
-  {
-    id: 0,
-    count: 0,
-    date: new Date().getTime(),
-  },
-];
-
 const Home = () => {
   const [data, setData] = useState([]);
 
@@ -29,6 +21,10 @@ const Home = () => {
     setData([newItem, ...data]);
     setCount((prev) => prev + 1);
   };
+  const onDelete = (targetId) => {
+    const newSmokeList = data.filter((item) => item.id !== targetId);
+    setData(newSmokeList);
+  };
   return (
     <div className="Home">
       <Header title={"흡연 기록하기"} />
@@ -36,7 +32,7 @@ const Home = () => {
         <h2>{`${date.getFullYear()}.${date.getMonth()}.${date.getDay()}`}</h2>
       </div>
       <div className="Home-count">
-        <span>{count}</span>
+        <span>{data.length}</span>
       </div>
       <div className="Home-button">
         <button onClick={Counter}>
@@ -54,7 +50,7 @@ const Home = () => {
           </svg>
         </button>
       </div>
-      <SmokeList count={count} smokeList={data} dummyList={dummyList} />
+      <SmokeList count={count} smokeList={data} onDelete={onDelete} />
     </div>
   );
 };

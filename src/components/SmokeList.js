@@ -6,8 +6,7 @@
 
 import SmokeLog from "./SmokeLog";
 
-const SmokeList = ({ smokeList }) => {
-  console.log(smokeList);
+const SmokeList = ({ smokeList, onDelete }) => {
   return (
     <div className="SmokeList">
       <div className="SmokeList-last">
@@ -15,16 +14,14 @@ const SmokeList = ({ smokeList }) => {
         <span>
           {smokeList < 1
             ? "오늘은 흡연을 하지 않았습니다."
-            : new Date(
-                smokeList[smokeList.length - 1].created_date
-              ).toLocaleString()}
+            : new Date(smokeList[0].created_date).toLocaleString()}
         </span>
       </div>
       <div className="SmokeList-Log">
         <h2>흡연 로그</h2>
         <div className="SmokeList-Log_list">
           {smokeList.map((item) => (
-            <SmokeLog key={item.id} {...item} />
+            <SmokeLog key={item.id} {...item} onDelete={onDelete} />
           ))}
         </div>
       </div>

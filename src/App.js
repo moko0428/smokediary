@@ -1,5 +1,4 @@
 import "./styles/App.css";
-import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Settings from "./routes/Settings";
 import Report from "./routes/Report";
@@ -7,7 +6,7 @@ import Home from "./routes/Home";
 import Diary from "./routes/Diary";
 import Place from "./routes/Place";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-function App(title) {
+function App() {
   return (
     <BrowserRouter>
       <div className="App">

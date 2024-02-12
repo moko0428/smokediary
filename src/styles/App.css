@@ -14,6 +14,7 @@
 .App {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .Header {
   display: flex;
@@ -23,7 +24,7 @@
   height: 60px;
   font-size: var(--text-big);
   font-weight: bold;
-  margin-bottom: 35px;
+  margin-bottom: 36px;
 }
 .Nav {
   display: flex;
@@ -33,7 +34,7 @@
   color: var(--text-color);
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 500px;
   height: 60px;
   align-items: center;
 }

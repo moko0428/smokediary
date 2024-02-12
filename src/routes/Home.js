@@ -2,9 +2,6 @@ import { useState } from "react";
 import SmokeList from "../components/SmokeList";
 import Header from "../components/Header";
 
-// 현재 날짜 랜더링
-// 현재 카운팅 개수 렌더링
-// 카운트 버튼으로 카운팅, 카운팅 시점의 시간 로드
 const Home = () => {
   const date = new Date();
 

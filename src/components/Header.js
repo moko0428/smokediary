@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-const Header = () => {
+const Header = ({ title }) => {
   return (
     <div className="Header">
-      <h2>흡연 기록하기</h2>
+      <h2>{title}</h2>
     </div>
   );
 };

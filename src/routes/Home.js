@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SmokeList from "../components/SmokeList";
+import Header from "../components/Header";
 
 // 현재 날짜 랜더링
 // 현재 카운팅 개수 렌더링
@@ -16,6 +17,7 @@ const Home = () => {
   };
   return (
     <div className="Home">
+      <Header title={"흡연 기록하기"} />
       <div className="Home-date">
         <h2>{`${date.getFullYear()}.${date.getMonth()}.${date.getDay()}`}</h2>
       </div>

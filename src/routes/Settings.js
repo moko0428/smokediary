@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import Header from "../components/Header";
 
 const Settings = () => {
   const cigaretteInput = useRef();
@@ -30,6 +31,7 @@ const Settings = () => {
   };
   return (
     <div className="Settings">
+      <Header title={"흡연 설정"} />
       <div>
         <input
           name="cigarette"

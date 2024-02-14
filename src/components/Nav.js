@@ -1,9 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
+import styled from "styled-components";
+
+const MyNav = styled.div`
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #e2e2e2;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  align-items: center;
+  background-color: white;
+`;
+
+const Item = styled.div`
+  padding: 12px 14px;
+`;
 
 const Nav = () => {
   return (
-    <div className="Nav">
-      <div className="Nav-home">
+    <MyNav>
+      <Item className="Nav-home">
         <Link to={"/"}>
           <svg
             width="69"
@@ -18,8 +34,8 @@ const Nav = () => {
             />
           </svg>
         </Link>
-      </div>
-      <div className="Nav-report">
+      </Item>
+      <Item className="Nav-report">
         <Link to={"/report"}>
           <svg
             width="72"
@@ -33,8 +49,8 @@ const Nav = () => {
             <path d="M38.125 10H34.125V26H38.125V10Z" fill="#111111" />
           </svg>
         </Link>
-      </div>
-      <div className="Nav-diary">
+      </Item>
+      <Item className="Nav-diary">
         <Link to={"/diary"}>
           <svg
             width="72"
@@ -49,8 +65,8 @@ const Nav = () => {
             />
           </svg>
         </Link>
-      </div>
-      <div className="Nav-place">
+      </Item>
+      <Item className="Nav-place">
         <Link to={"/place"}>
           <svg
             width="24"
@@ -65,8 +81,8 @@ const Nav = () => {
             />
           </svg>
         </Link>
-      </div>
-      <div className="Nav-settings">
+      </Item>
+      <Item className="Nav-settings">
         <Link to={"/settings"}>
           <svg
             width="71"
@@ -81,8 +97,8 @@ const Nav = () => {
             />
           </svg>
         </Link>
-      </div>
-    </div>
+      </Item>
+    </MyNav>
   );
 };
 

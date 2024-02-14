@@ -6,8 +6,8 @@
   --text-small: 16px;
   --text-large: 20px;
   --text-big: 24px;
-  --shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
-  --color-green-1: #48a823;
+  --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --color-green-1: #64c964;
   --text-color: #dddddd;
 }
 
@@ -16,46 +16,7 @@
   flex-direction: column;
   align-items: center;
 }
-.Header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 60px;
-  font-size: var(--text-big);
-  font-weight: bold;
-  margin-bottom: 36px;
-}
-.Nav {
-  display: flex;
-  justify-content: space-around;
-  border-top: var(--border);
-  font-size: var(--text-small);
-  color: var(--text-color);
-  position: fixed;
-  bottom: 0;
-  width: 500px;
-  height: 60px;
-  align-items: center;
-  background-color: white;
-}
-.Nav div {
-  padding: 12px 14px;
-}
 
-.Settings {
-  text-align: center;
-  padding: 20px;
-}
-
-.Settings input {
-  margin-bottom: 20px;
-  width: 300px;
-  padding: 10px;
-  border-radius: var(--border-radius);
-  padding: 20px;
-  box-shadow: var(--shadow);
-}
 .Settings input::placeholder {
   color: var(--text-color);
 }
@@ -103,79 +64,10 @@
   margin-bottom: 10px;
 }
 
-.Home {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
 .Home div {
   margin-bottom: 40px;
 }
 
-.Home-date h2 {
-  font-size: var(--text-large);
-  color: #cccccc;
-}
-
-.Home-count span {
-  color: var(--color-green-1);
-  font-weight: bold;
-  font-size: 120px;
-}
-
-.Home-button button {
-  padding: 20px;
-  border: var(--border);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  background-color: white;
-  cursor: pointer;
-}
 .Home-button button:active {
   background-color: #dddddd;
-}
-
-.SmokeList {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.SmokeList h2 {
-  font-size: var(--text-big);
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.SmokeList span {
-  color: #cccccc;
-}
-.SmokeList-Log {
-  width: 80%;
-}
-
-.SmokeList-Log_list {
-  width: 100%;
-  overflow-y: scroll;
-  height: 200px;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.SmokeList-Log_list::-webkit-scrollbar {
-  display: none;
-}
-
-.SmokeItem {
-  width: 80%;
-  border-bottom: var(--border);
-  padding: 10px;
-  display: flex;
-  justify-content: space-around;
 }

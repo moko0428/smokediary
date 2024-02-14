@@ -1,31 +1,79 @@
-// 기능
-// - Home에서 카운트된 기록 랜더링 ✅
-// 오늘 기준 몇번 흡연 인지 기록 ✅
-// 최근 흡연 기록 ✅
-// 오늘 흡연 로그 리스트 형태로 랜더링 ❌
-
+import styled from "styled-components";
 import SmokeLog from "./SmokeLog";
+
+const Wrap = styled.div`
+  width: 80%;
+`;
+const Container = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+`;
+const List = styled.div`
+  width: 100%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+`;
+const Last = styled.div`
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 80%;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: white;
+  border-radius: 14px;
+`;
+
+const Log = styled.div`
+  width: 100%;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+`;
+
+const Title = styled.h2`
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+`;
+
+export const Span = styled.span`
+  color: #ccc;
+`;
 
 const SmokeList = ({ smokeList, onDelete }) => {
   return (
-    <div className="SmokeList">
-      <div className="SmokeList-last">
-        <h2>최근 흡연</h2>
-        <span>
+    <Container>
+      <Last>
+        <Title>최근 흡연</Title>
+        <Span>
           {smokeList < 1
             ? "오늘은 흡연을 하지 않았습니다."
             : new Date(smokeList[0].created_date).toLocaleString()}
-        </span>
-      </div>
-      <div className="SmokeList-Log">
-        <h2>흡연 로그</h2>
-        <div className="SmokeList-Log_list">
-          {smokeList.map((item) => (
-            <SmokeLog key={item.id} {...item} onDelete={onDelete} />
-          ))}
-        </div>
-      </div>
-    </div>
+        </Span>
+      </Last>
+      <Wrap>
+        <List>
+          <Title>흡연 로그</Title>
+          <Log>
+            {smokeList.map((item) => (
+              <SmokeLog key={item.id} {...item} onDelete={onDelete} />
+            ))}
+          </Log>
+        </List>
+      </Wrap>
+    </Container>
   );
 };
 SmokeList.defaultProps = {

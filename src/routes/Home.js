@@ -1,10 +1,10 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SmokeList from "../components/SmokeList";
 import Header from "../components/Header";
 
 const Home = () => {
   const [data, setData] = useState([]);
-
+  const [isDate, setIsDate] = useState(new Date().getMinutes());
   const dataId = useRef(0);
 
   const date = new Date();
@@ -19,20 +19,24 @@ const Home = () => {
     };
     dataId.current += 1;
     setData([newItem, ...data]);
-    setCount((prev) => prev + 1);
+    setCount((count) => count + 1);
   };
   const onDelete = (targetId) => {
     const newSmokeList = data.filter((item) => item.id !== targetId);
+    setCount((count) => count - 1);
     setData(newSmokeList);
   };
+
   return (
     <div className="Home">
       <Header title={"흡연 기록하기"} />
       <div className="Home-date">
-        <h2>{`${date.getFullYear()}.${date.getMonth()}.${date.getDay()}`}</h2>
+        <h2>{`${date.getFullYear()}.${
+          date.getMonth() + 1
+        }.${date.getDate()}`}</h2>
       </div>
       <div className="Home-count">
-        <span>{data.length}</span>
+        <span>{count}</span>
       </div>
       <div className="Home-button">
         <button onClick={Counter}>
@@ -50,7 +54,7 @@ const Home = () => {
           </svg>
         </button>
       </div>
-      <SmokeList count={count} smokeList={data} onDelete={onDelete} />
+      <SmokeList smokeList={data} onDelete={onDelete} />
     </div>
   );
 };

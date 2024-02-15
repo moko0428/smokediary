@@ -2,7 +2,7 @@ import Header from "../components/Header";
 
 const Report = () => {
   return (
-    <div className="Report">
+    <div>
       <Header title={"흡연 보고서"} />
       <div>
         <div>

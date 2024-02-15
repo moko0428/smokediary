@@ -1,4 +1,8 @@
 @import "./reset.css";
+@import "./Header.css";
+@import "./Button.css";
+@import "./Nav.css";
+
 :root {
   --border: 1px solid #cccccc;
   --border-radius: 14px;
@@ -10,13 +14,37 @@
   --color-green-1: #64c964;
   --text-color: #dddddd;
 }
-
-.App {
+body {
+  background-color: #f6f6f6;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
+@media (min-width: 650px) {
+  .App {
+    width: 640px;
+  }
+}
+
+@media (max-width: 650px) {
+  .App {
+    width: 90vw;
+  }
+}
+
+#root {
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.App {
+  min-height: 100vh;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+/* 
 .Settings input::placeholder {
   color: var(--text-color);
 }
@@ -70,4 +98,4 @@
 
 .Home-button button:active {
   background-color: #dddddd;
-}
+} */

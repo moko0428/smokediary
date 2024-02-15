@@ -7,19 +7,18 @@ const Container = styled.div`
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  padding: 20px;
 `;
 
 const Input = styled.input`
   margin-bottom: 20px;
   width: 300px;
   border-radius: 14px;
-  padding: 20px;
-  border: none;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 30px 40px;
+  font-size: 20px;
+  border: 1px solid #ccc;
 
   &::placeholder {
-    color: #e2e2e2;
+    color: #ddd;
   }
   &:focus {
     outline: none;
@@ -27,18 +26,23 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-  width: 340px;
-  padding: 20px;
+  width: 380px;
+  padding: 30px 30px;
   cursor: pointer;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border: none;
   border-radius: 14px;
+  font-size: 24px;
 
   &:hover {
-    background-color: #dddddd;
+    background-color: #64c964;
   }
 `;
-
+const InputWrap = styled.div`
+  padding-top: 40px;
+  & div {
+    padding-bottom: 20px;
+  }
+`;
 const Settings = () => {
   const cigaretteInput = useRef();
   const priceInput = useRef();
@@ -70,25 +74,27 @@ const Settings = () => {
   return (
     <Container>
       <Header title={"흡연 설정"} />
-      <div>
-        <Input
-          name="cigarette"
-          ref={cigaretteInput}
-          value={state.cigarette}
-          placeholder="종류를 입력해주세요."
-          onChange={onChange}
-        />
-      </div>
-      <div>
-        <Input
-          name="price"
-          ref={priceInput}
-          value={state.price}
-          type="number"
-          placeholder="가격을 입력해주세요."
-          onChange={onChange}
-        />
-      </div>
+      <InputWrap>
+        <div>
+          <Input
+            name="cigarette"
+            ref={cigaretteInput}
+            value={state.cigarette}
+            placeholder="종류를 입력해주세요."
+            onChange={onChange}
+          />
+        </div>
+        <div>
+          <Input
+            name="price"
+            ref={priceInput}
+            value={state.price}
+            type="number"
+            placeholder="가격을 입력해주세요."
+            onChange={onChange}
+          />
+        </div>
+      </InputWrap>
       <div>
         <Button onClick={onSubmit}>저장</Button>
       </div>

@@ -75,6 +75,7 @@ iOS의 앱은 노담, 금연에 대한 앱만 존재
 
 - useEffect로 하루가 지나면 count 초기화 시키기
 - useMemo, React.memo, useCallback으로 최적화
+- 깃헙 잔디로 다이어리 흡연 기록
 
 ## 이슈
 

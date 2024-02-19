@@ -10,6 +10,7 @@
   --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   --color-green-1: #64c964;
   --text-color: #dddddd;
+  --font-family: "메이플스토리";
 }
 body {
   background-color: #f6f6f6;
@@ -40,7 +41,29 @@ body {
   min-height: 100vh;
   padding-left: 20px;
   padding-right: 20px;
+  font-family: var(--font-family);
 }
+
+/*  Header */
+header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+header > div {
+  display: flex;
+}
+
+header .head_text {
+  width: 100%;
+  font-size: 25px;
+  justify-content: center;
+}
+
+/*  Nav  */
 .Nav {
   display: flex;
   align-items: center;
@@ -55,58 +78,129 @@ body {
   width: inherit;
   background-color: white;
 }
-/* 
-.Settings input::placeholder {
-  color: var(--text-color);
-}
-.Settings button {
-  width: 340px;
-  padding: 20px;
-  cursor: pointer;
-  box-shadow: var(--shadow);
-  border-radius: var(--border-radius);
-}
-.Settings button:active {
-  background-color: #dddddd;
-}
-.Report {
+
+/*  Home */
+.Home {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 }
 
-.Report-column {
+.Home_wrapper {
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-  border: var(--border);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  width: 400px;
+  width: 100%;
+}
+/* 
+.Home_date h2 {
+  margin-top: 40px;
+  font-size: 18px;
+  color: black;
+  background-color: #ececec;
+  padding: 10px;
+  border-radius: 20px;
+} */
+
+/* .Home_count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 120px;
+  padding: 20px;
+} */
+.Home_wrapper_column {
+  width: 50%;
+  height: 300px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.Report-column div {
+.Home_wrapper_column:first-child {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  border-right: var(--border);
-  padding: 20px;
-  width: 33%;
 }
-.Report-column div:last-child {
-  border-right: none;
+.Home_date h2 {
+  font-size: 20px;
 }
-.Report-column div span {
-  font-size: var(--text-small);
+.Home_count {
+  font-size: 200px;
 }
-.Report-column div span:first-child {
-  margin-bottom: 10px;
+.Home_button button {
+  border: none;
+  font-size: 200px;
+  width: 250px;
+  height: 250px;
+
+  border-radius: 20px;
 }
 
-.Home div {
+/*  SmokeList */
+.SmokeList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.SmokeList h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.SmokeList section {
   margin-bottom: 40px;
 }
+.SmokeList_lastest span {
+  color: black;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #ececec;
+}
 
-.Home-button button:active {
-  background-color: #dddddd;
-} */
+.SmokeList_list_wrapper {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  border-radius: 20px;
+  background-color: #ececec;
+  width: 400px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+
+  -ms-overflow-style: none;
+}
+.SmokeList_list_wrapper::-webkit-scrollbar {
+  display: none;
+}
+.SmokeItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid black;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  margin: 10px 0px;
+
+  width: 300px;
+}

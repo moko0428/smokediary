@@ -1,6 +1,6 @@
 const SmokeLog = ({ created_date, onRemove, id }) => {
   return (
-    <div>
+    <div className="SmokeItem">
       <span>{new Date(created_date).toLocaleString()}</span>
       <button
         onClick={() => {
@@ -10,7 +10,7 @@ const SmokeLog = ({ created_date, onRemove, id }) => {
           }
         }}
       >
-        삭제하기
+        X
       </button>
     </div>
   );

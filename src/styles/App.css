@@ -1,7 +1,4 @@
 @import "./reset.css";
-@import "./Header.css";
-@import "./Button.css";
-@import "./Nav.css";
 
 :root {
   --border: 1px solid #cccccc;
@@ -43,6 +40,20 @@ body {
   min-height: 100vh;
   padding-left: 20px;
   padding-right: 20px;
+}
+.Nav {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #e2e2e2;
+
+  padding-top: 20px;
+  padding-bottom: 10px;
+
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  width: inherit;
+  background-color: white;
 }
 /* 
 .Settings input::placeholder {

@@ -14,18 +14,12 @@ const reducer = (state, action) => {
     case "INIT": {
       return action.data;
     }
-    case "CREATE": {
-      newState = [action, ...state];
+    case "ACC": {
+      newState = [action.data, ...state];
       break;
     }
     case "REMOVE": {
       newState = state.filter((item) => item.id !== action.targetId);
-      break;
-    }
-    case "EDIT": {
-      newState = state.map((item) =>
-        item.id === action.data.id ? { ...action.data } : it
-      );
       break;
     }
     default:
@@ -40,12 +34,12 @@ export const SmokeDispatchContext = React.createContext();
 
 function App() {
   const [data, dispatch] = useReducer(reducer, []);
-
+  console.log("App", data);
   const dataId = useRef(0);
 
   const onCreate = (date, count) => {
     dispatch({
-      type: "CREATE",
+      type: "ACC",
       data: {
         id: dataId.current,
         count,

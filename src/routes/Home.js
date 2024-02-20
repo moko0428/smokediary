@@ -21,12 +21,12 @@ const Home = () => {
     dataId.current += 1;
     onCreate(created_date, count + 1);
     setData([newItem, ...data]);
-    setCount((prev) => prev + 1);
+    setCount(count + 1);
   };
 
   const onRemove = (targetId) => {
     const newSmokeList = data.filter((item) => item.id !== targetId);
-    setCount((prev) => prev - 1);
+    setCount(count - 1);
     setData(newSmokeList);
   };
   return (
@@ -35,7 +35,9 @@ const Home = () => {
       <div className="Home_wrapper">
         <div className="Home_wrapper_column">
           <div className="Home_date">
-            <h2>2024.02.15</h2>
+            <h2>{`${date.getFullYear()}. ${
+              date.getMonth() + 1
+            }. ${date.getDate()}.`}</h2>
           </div>
           <div className="Home_count">
             <span>{count}</span>

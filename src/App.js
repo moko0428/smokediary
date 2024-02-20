@@ -29,10 +29,9 @@ const reducer = (state, action) => {
       break;
     }
     default:
-      console.log("state", state);
       return state;
   }
-  console.log("new", newState);
+
   return newState;
 };
 

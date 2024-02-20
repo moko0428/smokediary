@@ -1,9 +1,12 @@
 import SmokeList from "../components/SmokeList";
 import Header from "../components/Header";
 import { useContext, useRef, useState } from "react";
-import { SmokeDispatchContext } from "../App";
+import { SmokeDispatchContext, SmokeStateContext } from "../App";
 
 const Home = () => {
+  const { onCreate } = useContext(SmokeDispatchContext);
+  const smokeData = useContext(SmokeStateContext);
+  console.log("smokeData", smokeData);
   const [data, setData] = useState([]);
   const [count, setCount] = useState(0);
   const dataId = useRef(0);
@@ -16,6 +19,7 @@ const Home = () => {
       id: dataId.current,
     };
     dataId.current += 1;
+    onCreate(created_date, count + 1);
     setData([newItem, ...data]);
     setCount((prev) => prev + 1);
   };

@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import Header from "../components/Header";
+import { SmokeStateContext } from "../App";
 
 const Report = () => {
+  const smokeData = useContext(SmokeStateContext);
+  console.log("smokeData", smokeData[0].data.Counter);
   return (
     <div>
       <Header title={"흡연 보고서"} />

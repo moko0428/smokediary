@@ -47,7 +47,6 @@ function App() {
       },
     });
     dataId.current += 1;
-    count += 1;
   };
   const onRemove = (targetId) => {
     dispatch({ type: "REMOVE", targetId });

@@ -1,12 +1,25 @@
-const SmokeLog = ({ created_date, onRemove, id }) => {
+import React, { useContext, useEffect, useState } from "react";
+import { SmokeStateContext } from "../App";
+
+const SmokeLog = () => {
+  const smoke = useContext(SmokeStateContext);
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    if (smoke.length >= 1) {
+      setData(smoke[0].date);
+    }
+  }, [smoke]);
+
   return (
     <div className="SmokeItem">
-      <span>{new Date(created_date).toLocaleString()}</span>
+      <span>{new Date(data).toLocaleString()}</span>
       <button
         onClick={() => {
-          console.log(id);
-          if (window.confirm(`${id}번째 로그를 정말 삭제하시겠습니까?`)) {
-            onRemove(id);
+          // console.log(id);
+          if (window.confirm(`${0}번째 로그를 정말 삭제하시겠습니까?`)) {
+            // onRemove(id);
           }
         }}
       >
@@ -16,4 +29,4 @@ const SmokeLog = ({ created_date, onRemove, id }) => {
   );
 };
 
-export default SmokeLog;
+export default React.memo(SmokeLog);

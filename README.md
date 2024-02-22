@@ -52,16 +52,16 @@ iOS의 앱은 노담, 금연에 대한 앱만 존재
   - 금일 흡연 카운팅 표기 ✅
     - 사용자 시간 기준 하루가 지나면 초기화가 되고 카운팅은 보고서에 기록되어야 한다. ❌
   - 카운팅 버튼 ✅
-    - count, date, price, cigarette 정보가 담겨 있어야 한다.
+    - id, count, date
+    - localStorage에 id, count, date 저장
 - SmokeList :
   - 흡연 금일 카운팅 기록 ✅
   - 최근 흡연 시간 표기 ✅
   - 금일 흡연 로그 표기 ✅
-    - 로그별 최적화 ❌
 - Report :
   - 카운팅으로 오늘, 주, 달, 년, 원, 갑, 합계 표기 ❌
 - Diary :
-  - 달력으로 흡연 기록 표시 ❌
+  - 깃헙 잔디로 흡연 카운팅 표시
 - Place :
   - 흡연 구역 및 사용자가 흡연한 위치 정보 표시 ❌
 - Settings :
@@ -74,9 +74,7 @@ iOS의 앱은 노담, 금연에 대한 앱만 존재
 ## TODO
 
 - useEffect로 하루가 지나면 count 초기화 시키기
-- useMemo, React.memo, useCallback으로 최적화
-- 깃헙 잔디로 다이어리 흡연 기록
-- localStorage에 카운트 저장
+- 리프레쉬 버튼 최적화, counting button 최적화 필요
 
 ## 이슈
 

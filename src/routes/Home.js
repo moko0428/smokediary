@@ -1,11 +1,10 @@
 import SmokeList from "../components/SmokeList";
 import Header from "../components/Header";
-import { useContext, useEffect, useRef, useState } from "react";
-import { SmokeDispatchContext, SmokeStateContext } from "../App";
+import { useContext, useEffect, useState } from "react";
+import { SmokeStateContext } from "../App";
 import Counter from "../components/Counter";
 
 const Home = () => {
-  const { onRemove } = useContext(SmokeDispatchContext);
   const smokeData = useContext(SmokeStateContext);
 
   const [data, setData] = useState(0);

@@ -1,30 +1,9 @@
-import React, { useContext, useEffect, useState } from "react";
-import { SmokeStateContext } from "../App";
+import React from "react";
 
-const SmokeLog = () => {
-  const smoke = useContext(SmokeStateContext);
-
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    if (smoke.length >= 1) {
-      setData(smoke[0].date);
-    }
-  }, [smoke]);
-
+const SmokeLog = ({ date }) => {
   return (
     <div className="SmokeItem">
-      <span>{new Date(data).toLocaleString()}</span>
-      <button
-        onClick={() => {
-          // console.log(id);
-          if (window.confirm(`${0}번째 로그를 정말 삭제하시겠습니까?`)) {
-            // onRemove(id);
-          }
-        }}
-      >
-        X
-      </button>
+      <span>{new Date(date).toLocaleString()}</span>
     </div>
   );
 };

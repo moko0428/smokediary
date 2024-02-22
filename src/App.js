@@ -6,7 +6,7 @@ import Home from "./routes/Home";
 import Diary from "./routes/Diary";
 import Place from "./routes/Place";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import React, { useReducer, useRef } from "react";
+import React, { useEffect, useReducer, useRef } from "react";
 
 const reducer = (state, action) => {
   let newState = [];
@@ -25,7 +25,7 @@ const reducer = (state, action) => {
     default:
       return state;
   }
-
+  localStorage.setItem("smoke", JSON.stringify(newState));
   return newState;
 };
 
@@ -36,17 +36,30 @@ function App() {
   const [data, dispatch] = useReducer(reducer, []);
   console.log("App", data);
   const dataId = useRef(0);
+  const countStore = useRef(1);
 
-  const onCreate = (date, count) => {
+  useEffect(() => {
+    const localData = localStorage.getItem("smoke");
+    if (localData) {
+      const localSmoke = JSON.parse(localData);
+      if (localSmoke.length >= 1) {
+        dataId.current = parseInt(localSmoke[0].id) + 1;
+        countStore.current = parseInt(localSmoke[0].count) + 1;
+        dispatch({ type: "INIT", data: localSmoke });
+      }
+    }
+  }, []);
+  const onCreate = (date) => {
     dispatch({
       type: "ACC",
       data: {
         id: dataId.current,
-        count,
+        count: countStore.current,
         date: new Date(date).getTime(),
       },
     });
     dataId.current += 1;
+    countStore.current += 1;
   };
   const onRemove = (targetId) => {
     dispatch({ type: "REMOVE", targetId });

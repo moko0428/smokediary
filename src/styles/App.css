@@ -78,7 +78,9 @@ header .head_text {
   width: inherit;
   background-color: white;
 }
-
+.clickBtn {
+  color: #64c964;
+}
 .icons {
   display: flex;
   align-items: center;
@@ -276,4 +278,68 @@ svg {
   border-top-color: #000;
 
   animation: spinner 0.6s linear infinite;
+}
+
+.Calendar {
+  display: flex;
+  flex-direction: column;
+}
+.Calendar_header {
+  width: 97%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+.Calendar_text {
+  font-size: 18px;
+  color: #818181;
+}
+.month {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 5px;
+  color: #000;
+}
+.Calendar_button {
+  display: flex;
+}
+.col {
+  display: flex;
+  width: 100px;
+}
+.col-end button {
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  margin: 5px 2px;
+  cursor: pointer;
+}
+.Calendar_days {
+  display: flex;
+  width: 98%;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  border-bottom: 1px solid #ececec;
+  background-color: #ececec;
+}
+.cell {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  padding: 3px;
+  border: 1px solid #ececec;
+}
+.Calendar_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.row {
+  display: flex;
 }

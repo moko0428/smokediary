@@ -72,13 +72,24 @@ header .head_text {
   padding-top: 20px;
   padding-bottom: 10px;
 
-  justify-content: space-between;
+  justify-content: space-around;
   position: fixed;
   bottom: 0;
   width: inherit;
   background-color: white;
 }
 
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  padding: 10px 40px;
+  border-radius: 10px;
+}
+svg {
+  color: black;
+}
 /*  Home */
 .Home {
   display: flex;
@@ -128,12 +139,15 @@ header .head_text {
 .Home_count {
   font-size: 200px;
 }
+.Home_button {
+  position: relative;
+}
 .Home_button button {
   border: none;
   font-size: 200px;
   width: 250px;
   height: 250px;
-
+  cursor: pointer;
   border-radius: 20px;
 }
 
@@ -163,7 +177,7 @@ header .head_text {
   padding-bottom: 10px;
   padding-left: 20px;
   padding-right: 20px;
-
+  position: relative;
   border-radius: 20px;
   background-color: #ececec;
   width: 500px;
@@ -177,6 +191,14 @@ header .head_text {
 }
 .SmokeList_list_wrapper::-webkit-scrollbar {
   display: none;
+}
+.SmokeList_reset {
+  position: absolute;
+  right: 20px;
+}
+.SmokeList_reset button {
+  border: none;
+  cursor: pointer;
 }
 .SmokeItem {
   display: flex;
@@ -221,4 +243,37 @@ header .head_text {
   background-color: #ececec;
   font-size: 16px;
   padding: 5px;
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.Loading_wrapper {
+  background-color: #ececec;
+  border: none;
+  font-size: 200px;
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+}
+
+.Loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  margin-left: -20px;
+  border-radius: 50%;
+  border: 5px solid #cccccc;
+  border-top-color: #000;
+
+  animation: spinner 0.6s linear infinite;
 }

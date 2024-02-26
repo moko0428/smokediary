@@ -13,15 +13,14 @@ const beforeTime = (cur, past) => {
     return <span>{`${Math.floor(minutes)}분 전`}</span>;
   } else if (hours < 60 * 60 * 24) {
     return <span>{`${Math.floor(hours)}시간 전`}</span>;
+  } else if (hours > 60 * 60 * 24) {
+    return <span>하루전</span>;
   }
 };
 const SmokeList = () => {
   const smoke = useContext(SmokeStateContext);
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    // console.log(Math.floor(new Date().getTime() - data[0].date) / 1000);
-  }, [data]);
   useEffect(() => {
     if (smoke.length >= 1) {
       setData(smoke);

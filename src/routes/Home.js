@@ -12,6 +12,12 @@ const Home = () => {
   const date = new Date();
 
   useEffect(() => {
+    const titleElement = document.getElementsByTagName("title")[0];
+
+    titleElement.innerHTML = `연흡`;
+  }, []);
+
+  useEffect(() => {
     if (smokeData.length >= 1) {
       setData(smokeData[0].count);
     }

@@ -1,10 +1,13 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Header from "../components/Header";
 import { SmokeStateContext } from "../App";
 
 const Report = () => {
   const smokeData = useContext(SmokeStateContext);
-
+  useEffect(() => {
+    const titleElement = document.getElementsByTagName("title")[0];
+    titleElement.innerHTML = `연흡 | 보고서`;
+  }, []);
   return (
     <div>
       <Header title={"흡연 보고서"} />

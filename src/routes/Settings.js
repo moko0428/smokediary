@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Header from "../components/Header";
 
 const Settings = () => {
@@ -29,6 +29,10 @@ const Settings = () => {
     });
     alert("저장 성공");
   };
+  useEffect(() => {
+    const titleElement = document.getElementsByTagName("title")[0];
+    titleElement.innerHTML = `연흡 | 설정`;
+  }, []);
   return (
     <div>
       <Header title={"흡연 설정"} />

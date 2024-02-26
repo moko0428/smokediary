@@ -34,7 +34,6 @@ export const SmokeDispatchContext = React.createContext();
 
 function App() {
   const [data, dispatch] = useReducer(reducer, []);
-  console.log("App", data);
   const dataId = useRef(0);
   const countStore = useRef(1);
 

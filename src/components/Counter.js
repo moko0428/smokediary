@@ -9,7 +9,7 @@ const Counter = () => {
   const [isClick, setIsClick] = useState(false);
 
   const date = new Date();
-
+  console.log("data", data);
   const Counter = () => {
     const created_date = date.getTime();
     onCreate(created_date, data + 1);

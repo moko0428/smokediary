@@ -279,7 +279,9 @@ svg {
 
   animation: spinner 0.6s linear infinite;
 }
-
+.not-valid {
+  color: #ececec;
+}
 .Calendar {
   display: flex;
   flex-direction: column;
@@ -342,4 +344,8 @@ svg {
 }
 .row {
   display: flex;
+}
+
+.Report_accordion {
+  margin-top: 20px;
 }

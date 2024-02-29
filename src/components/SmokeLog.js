@@ -1,9 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
-const SmokeLog = ({ date }) => {
+const SmokeLog = () => {
+  const smokeData = useSelector((state) => state.smokeData);
+  console.log(smokeData);
   return (
     <div className="SmokeItem">
-      <span>{new Date(date).toLocaleString()}</span>
+      <span>{new Date(smokeData.date).toLocaleString()}</span>
     </div>
   );
 };

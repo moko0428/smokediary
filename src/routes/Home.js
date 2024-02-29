@@ -1,15 +1,14 @@
 import SmokeList from "../components/SmokeList";
 import Header from "../components/Header";
-import { useContext, useEffect, useState } from "react";
-import { SmokeStateContext } from "../App";
+import { useEffect } from "react";
 import Counter from "../components/Counter";
+import { useSelector } from "react-redux";
 
 const Home = () => {
-  const smokeData = useContext(SmokeStateContext);
-
-  const [data, setData] = useState(0);
-
+  const smokeData = useSelector((state) => state.smokeData);
   const date = new Date();
+
+  console.log(smokeData.count);
 
   useEffect(() => {
     const titleElement = document.getElementsByTagName("title")[0];
@@ -17,14 +16,6 @@ const Home = () => {
     titleElement.innerHTML = `연흡`;
   }, []);
 
-  useEffect(() => {
-    if (smokeData.length >= 1) {
-      setData(smokeData[0].count);
-    }
-  }, [smokeData]);
-  // const onRemove = (targetId) => {
-  //   setData(data - 1);
-  // };
   return (
     <div className="Home">
       <Header title={"흡연 기록하기"} />
@@ -36,7 +27,7 @@ const Home = () => {
             }. ${date.getDate()}.`}</h2>
           </div>
           <div className="Home_count">
-            <span>{data}</span>
+            <span>{smokeData.count}</span>
           </div>
         </div>
         <Counter />

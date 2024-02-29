@@ -1,11 +1,10 @@
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import Header from "../components/Header";
-import { SmokeStateContext } from "../App";
-import "bootstrap/dist/css/bootstrap.min.css";
+
+// import "bootstrap/dist/css/bootstrap.min.css";
 import Accordion from "react-bootstrap/Accordion";
 
 const Report = () => {
-  const smokeData = useContext(SmokeStateContext);
   useEffect(() => {
     const titleElement = document.getElementsByTagName("title")[0];
     titleElement.innerHTML = `연흡 | 보고서`;

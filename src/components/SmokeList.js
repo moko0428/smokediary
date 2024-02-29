@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import SmokeLog from "./SmokeLog";
 import { SmokeStateContext } from "../App";
 import { FiRefreshCw } from "react-icons/fi";
+import { useSelector } from "react-redux";
 
 const beforeTime = (cur, past) => {
   const seconds = Math.floor((cur.getTime() - past.getTime()) / 1000);
@@ -18,14 +19,7 @@ const beforeTime = (cur, past) => {
   }
 };
 const SmokeList = () => {
-  const smoke = useContext(SmokeStateContext);
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    if (smoke.length >= 1) {
-      setData(smoke);
-    }
-  }, [smoke]);
+  const smokeData = useSelector((state) => state.smokeData);
 
   const reRender = () => {
     window.location.reload();
@@ -37,9 +31,9 @@ const SmokeList = () => {
         <div className="lastest_wrapper">
           <div className="lastest_span">
             <span>
-              {data < 1
+              {smokeData < 1
                 ? "오늘은 흡연을 하지 않았습니다."
-                : beforeTime(new Date(), new Date(data[0].date))}
+                : beforeTime(new Date(), new Date(smokeData.date))}
             </span>
           </div>
           <div className="lastest_btn">
@@ -52,9 +46,9 @@ const SmokeList = () => {
       <section className="SmokeList_log">
         <h2>흡연 로그</h2>
         <div className="SmokeList_list_wrapper">
-          {data.map((item) => (
+          {/* {data.map((item) => (
             <SmokeLog key={item.id} {...item} />
-          ))}
+          ))} */}
         </div>
       </section>
     </div>
